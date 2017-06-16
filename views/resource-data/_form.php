@@ -12,8 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'rd_type')->textInput(['maxlength' => true]) ?>
-
+    <!--?= $form->field($model, 'rd_type')->textInput(['maxlength' => true]) ?-->
+    <?php 
+        $a= ['พืช' => 'พืช', 'สัตว์และแมลง' =>'สัตว์และแมลง', 'จุลินทรีย์'=>'จุลินทรีย์'];
+        echo $form->field($model, 'rd_type')->dropDownList($a,['prompt'=>'Select Option']);
+    ?>
     <?= $form->field($model, 'rd_commonName')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'rd_localName')->textInput(['maxlength' => true]) ?>
