@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ResourceData */
@@ -10,7 +11,8 @@ use yii\widgets\ActiveForm;
 
 <div class="resource-data-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <!--?php $form = ActiveForm::begin(); ?-->
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
     <!--?= $form->field($model, 'rd_type')->textInput(['maxlength' => true]) ?-->
     <?php 
@@ -31,7 +33,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'rd_benefit')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'rd_picture')->textInput(['maxlength' => true]) ?>
+    <!--?= $form->field($model, 'rd_picture')->textInput(['maxlength' => true]) ?-->
+    <?= $form->field($model, 'rd_picture[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
+
+    <button>Submit</button>
 
     <?= $form->field($model, 'rd_other')->textInput(['maxlength' => true]) ?>
 

@@ -6,7 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\ResourceData */
 
-$this->title = $model->rd_id;
+//$this->title = $model->rd_id;
+$this->title = $model->rd_commonName;
 $this->params['breadcrumbs'][] = ['label' => 'Resource Datas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
